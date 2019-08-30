@@ -38,6 +38,6 @@ with open(output_file_name, 'w') as inputOut:   #open file write and close file
     for e in sorted_list:                       #traverse the each link of list
         num = word_list.count(e)                #get total occurances of word in list
         if(len(e)>=1):                          #Bug empty space
-            word_dictionary[e] = num
-    for word, number in word_dictionary.items():
-        inputOut.write("%s %d\n" % (word, number))   
+            word_dictionary[e] = num            #Create New dictionary entry
+    for word, number in word_dictionary.items():    #traverse dictionary
+        inputOut.write("%s %d\n" % (word, number))  #Write to file from dictionary
