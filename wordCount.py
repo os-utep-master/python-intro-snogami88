@@ -28,8 +28,8 @@ if not os.path.exists(output_file_name):
 with open(input_file_name, 'r') as inputF:      #open and read the file then close
     word_list = inputF.read()                   #Read the complete file
     word_list = word_list.lower()            #Do not compare the case tense
-    word_list = word_list.strip()               #Remove any next line spaces
-    word_list = re.split('[ \t]', word_list)    #split into array of anything that is not a word
+  #  word_list = word_list.strip()               #Remove any next line spaces
+    word_list = re.split('\W+', word_list)    #split into array of anything that is not a word
     word_list = sorted(set(word_list))          #Put list in alphabetical order becoms 
 print(word_list)
  #   return word_list
