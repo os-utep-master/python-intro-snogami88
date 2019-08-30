@@ -11,7 +11,7 @@ input_file_name = sys.argv[1]
 output_file_name = sys.argv[2]
 word_list = []
 sorted_list = []
-
+word_dictionary = {}
 #Check if input file exists
 if not os.path.exists(input_file_name):
     print("input text file %s does not exists!" % input_file_name)
