@@ -28,4 +28,4 @@ with open(input_file_name, 'r') as inputF:      #open and read the file then clo
 with open(output_file_name, 'w') as inputOut:   #open file write and close file
     for e in sorted_list: 
         num = word_list.count(e)
-        inputOut.write("%s %d" % (e, num))
+        inputOut.write("%s %d\n" % (e, num))
