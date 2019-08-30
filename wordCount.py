@@ -40,4 +40,4 @@ with open(output_file_name, 'w') as inputOut:   #open file write and close file
         if(len(e)>=1):                          #Bug empty space
             word_dictionary[e] = num
     for word, number in word_dictionary.items():
-        inputOut.write(word, number)   
+        inputOut.write(word + " " + number)   
