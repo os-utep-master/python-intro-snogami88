@@ -38,5 +38,5 @@ with open(output_file_name, 'w') as inputOut:   #open file write and close file
     for e in sorted_list:                       #traverse the each link of list
         num = word_list.count(e)                #get total occurances of word in list
         if(len(e)>=1):                          #Bug empty space
-            word_dictionary = {e : num}
+            word_dictionary[e] = num
     print(word_dictionary)
