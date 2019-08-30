@@ -23,18 +23,18 @@ with open(input_file_name, 'r') as inputF:      #open and read the file then clo
     word_list = word_list.lower()            #Do not compare the case tense
     word_list = re.split('\W+', word_list)    #split into array of anything that is a word
     word_list = sorted(set(word_list))          #Put list in alphabetical order becoms 
-print(word_list)
- 
 
 #Create array with count of each words
 
 i = 0
-prev = word_list[i]
+c = 0
+prev = ""
 for index in word_list:
     if prev != index:
-        i = i + 1
-    count.append(i)
-    count[i] += 1 
+        i += 1
+        count.append(i)
+        c = i-1
+    count[c] = count[c] + 1 
     prev = index
 print(count)
 
