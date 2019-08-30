@@ -38,7 +38,7 @@ def read_file():
 def create_file(final_list, num_list):
     with open(output_file_name, 'w') as inputOut:   #open file write and close file
         i = 0
-        for e in final_list
+        for e in final_list:
             inputOut.write("%s %d\n" % (e, num_list[i]))
             i = i + 1
 
