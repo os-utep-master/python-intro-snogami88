@@ -26,8 +26,17 @@ with open(input_file_name, 'r') as inputF:        #open and read the file then c
     word_list = tuple(word_list)                  #Create list into tuple
 
 #Print output file, or overide existing file
+#with open(output_file_name, 'w') as inputOut:   #open file write and close file
+#    for e in sorted_list:                       #traverse the each link of list
+#        num = word_list.count(e)                #get total occurances of word in list
+#        if(len(e)>=1):                          #Bug empty space
+#            inputOut.write("%s %d\n" % (e, num))    #write to file
+
+                
+#Print output file, or overide existing file
 with open(output_file_name, 'w') as inputOut:   #open file write and close file
     for e in sorted_list:                       #traverse the each link of list
         num = word_list.count(e)                #get total occurances of word in list
         if(len(e)>=1):                          #Bug empty space
-            inputOut.write("%s %d\n" % (e, num))    #write to file
+            word_dictionary = {e : num}
+    print(word_dictionary)
