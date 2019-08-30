@@ -30,5 +30,4 @@ with open(output_file_name, 'w') as inputOut:   #open file write and close file
     i = 0
     for e in sorted_list: 
         inputOut.write("%s %d\n" % (e, word_list.count(e))
-print ("Information from %s has been seperated into a list posted in %s" % (input_file_name, output_file_name))
 
