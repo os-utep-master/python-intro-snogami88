@@ -39,5 +39,5 @@ with open(output_file_name, 'w') as inputOut:   #open file write and close file
         num = word_list.count(e)                #get total occurances of word in list
         if(len(e)>=1):                          #Bug empty space
             word_dictionary[e] = num
-    for word in word_dictionary.items():
-        inputOut.write(word_dictionary)   
+    for word, number in word_dictionary.items():
+        inputOut.write("%s %d\n" % (word, number))   
