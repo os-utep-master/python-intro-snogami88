@@ -33,7 +33,8 @@ prev = word_list[i]
 for index in word_list:
     if prev != index:
         i = i + 1
-    count.append(i) += 1 
+    count.append(i)
+    count[i] += 1 
     prev = index
 print(count)
 
