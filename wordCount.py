@@ -27,4 +27,5 @@ with open(input_file_name, 'r') as inputF:      #open and read the file then clo
 #Print output file, or overide existing file
 with open(output_file_name, 'w') as inputOut:   #open file write and close file
     for e in sorted_list: 
-        inputOut.write("%s %d" % (e, word_list.count(e))
+        num = word_list.count(e)
+        inputOut.write("%s %d" % (e, num))
