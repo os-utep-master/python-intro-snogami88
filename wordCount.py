@@ -27,7 +27,7 @@ if not os.path.exists(output_file_name):
 def read_file():    
     with open(input_file_name, 'r') as inputF:      #open and read the file then close
         word_list = inputF.read()                   #Read the complete file
-        word_list = word_list.casefold()            #Do not compare the case tense
+        word_list = word_list.lower()            #Do not compare the case tense
         word_list = word_list.split()               #Remove any next line spaces
         word_list = re.split("[\W+]", word_list)    #split into array of anything that is not a word
         word_list = sorted(set(word_list))          #Put list in alphabetical order
@@ -38,7 +38,7 @@ def read_file():
 def create_file(final_list, num_list):
     with open(output_file_name, 'w') as inputOut:   #open file write and close file
         i = 0
-        for e in final_list:
+        for e in final_list: 
             inputOut.write("%s %d\n" % (e, num_list[i]))
             i = i + 1
 
