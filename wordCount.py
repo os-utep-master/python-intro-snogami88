@@ -10,8 +10,8 @@ if(len(sys.argv) is not 3):
 
 input_file_name = sys.argv[1]
 output_file_name = sys.argv[2]
-word_list = {}
-count = {}
+word_list = []
+count = []
 
 #Check if input file exists
 if not os.path.exists(input_file_name):
@@ -25,32 +25,32 @@ if not os.path.exists(output_file_name):
 
 #Read the file
 #def read_file():    
-    with open(input_file_name, 'r') as inputF:      #open and read the file then close
-        word_list = inputF.read()                   #Read the complete file
-        word_list = word_list.lower()            #Do not compare the case tense
-        word_list = word_list.strip()               #Remove any next line spaces
-        word_list = re.split('[ \t]', word_list)    #split into array of anything that is not a word
-        word_list = sorted(set(word_list))          #Put list in alphabetical order
-        print(word_list)
+with open(input_file_name, 'r') as inputF:      #open and read the file then close
+    word_list = inputF.read()                   #Read the complete file
+    word_list = word_list.lower()            #Do not compare the case tense
+    word_list = word_list.strip()               #Remove any next line spaces
+    word_list = re.split('[ \t]', word_list)    #split into array of anything that is not a word
+    word_list = sorted(set(word_list))          #Put list in alphabetical order becoms 
+print(word_list)
  #   return word_list
 
 #Create array with count of each words
 #def get_count(words):
-    i = 0
-    prev = ""
-    for index in word_list:
-        if prev != index:
-            i = i + 1
-        count[i] = count + 1
-        prev = index
+i = 0
+prev = ""
+for index in word_list:
+    count[i] = count[i] + 1
+    if prev != index:
+        i = i + 1
+    prev = index
 
 #Print output file, or overide existing file
 #def create_file(final_list, num_list):
-    with open(output_file_name, 'w') as inputOut:   #open file write and close file
-        i = 0
-        for e in word_list: 
-            inputOut.write("%s %d\n" % (e, count[i]))
-            i = i + 1
+with open(output_file_name, 'w') as inputOut:   #open file write and close file
+    i = 0
+    for e in word_list: 
+        inputOut.write("%s %d\n" % (e, count[i]))
+        i = i + 1
 
 
 #word_list = read_file()
