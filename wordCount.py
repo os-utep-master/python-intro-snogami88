@@ -11,22 +11,23 @@ input_file_name = sys.argv[1]
 output_file_name = sys.argv[2]
 word_list = []
 sorted_list = []
+
 #Check if input file exists
 if not os.path.exists(input_file_name):
     print("input text file %s does not exists!" % input_file_name)
     exit()
 
 #Read the file    
-with open(input_file_name, 'r') as inputF:      #open and read the file then close
-    word_list = inputF.read()                   #Read the complete file
-    word_list = word_list.lower()            #Do not compare the case tense
-    word_list = re.split('\W+', word_list)    #split into array of anything that is a word
-    sorted_list = sorted(set(word_list))          #Put list in alphabetical order becoms 
-    word_list = tuple(word_list)
+with open(input_file_name, 'r') as inputF:        #open and read the file then close
+    word_list = inputF.read()                     #Read the complete file
+    word_list = word_list.lower()                 #Do not compare the case tense
+    word_list = re.split('\W+', word_list)        #split into array of anything that is a word
+    sorted_list = sorted(set(word_list))          #Put list in alphabetical order 
+    word_list = tuple(word_list)                  #Create list into tuple
 
 #Print output file, or overide existing file
 with open(output_file_name, 'w') as inputOut:   #open file write and close file
-    for e in sorted_list: 
-        num = word_list.count(e)
-        if(len(e)>=1):
-            inputOut.write("%s %d\n" % (e, num))
+    for e in sorted_list:                       #traverse the each link of list
+        num = word_list.count(e)                #get total occurances of word in list
+        if(len(e)>=1):                          #Bug empty space
+            inputOut.write("%s %d\n" % (e, num))    #write to file
