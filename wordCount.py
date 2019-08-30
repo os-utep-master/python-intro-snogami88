@@ -2,7 +2,6 @@ import os         #Checks if file exists
 import re         #regualr expression 
 import sys        #command line areguments
 import subprocess #executing program
-import array
 
 if(len(sys.argv) is not 3):
     print("Correct Syntax: wordCount.py <input_file.txt> <output_file.txt>")
@@ -27,6 +26,5 @@ with open(input_file_name, 'r') as inputF:      #open and read the file then clo
 
 #Print output file, or overide existing file
 with open(output_file_name, 'w') as inputOut:   #open file write and close file
-    i = 0
     for e in sorted_list: 
-        inputOut.write("%s %d\n" % (e, word_list.count(e))
+        inputOut.write("%s %d" % (e, word_list.count(e))
