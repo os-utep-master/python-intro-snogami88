@@ -32,13 +32,13 @@ print(word_list)
  
 
 #Create array with count of each words
-count = count[len.word_list]
+
 i = 0
-prev = ""
+prev = word_list[i]
 for index in word_list:
-    count[i] = count[i] + 1
     if prev != index:
         i = i + 1
+    count.append(i+1) += 1
     prev = index
 print(count)
 
