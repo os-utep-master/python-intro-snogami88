@@ -29,7 +29,7 @@ def read_file():
         word_list = inputF.read()                   #Read the complete file
         word_list = word_list.casefold()            #Do not compare the case tense
         word_list = word_list.split()               #Remove any next line spaces
-        word_list = re.split('[\W+]', word_list)    #split into array of anything that is not a word
+        word_list = re.split("[\W+]", word_list)    #split into array of anything that is not a word
         word_list = sorted(set(word_list))          #Put list in alphabetical order
         print(word_list)
     return word_list
