@@ -18,9 +18,9 @@ if not os.path.exists(input_file_name):
     exit()
 
 #Check if output file exists
-if not os.path.exists(output_file_name):
-    print("output text file %s does not exists!" % output_file_name)
-    exit()
+#if not os.path.exists(output_file_name):
+ #   print("output text file %s does not exists!" % output_file_name)
+#  exit()
 
 #Read the file    
 with open(input_file_name, 'r') as inputF:      #open and read the file then close
