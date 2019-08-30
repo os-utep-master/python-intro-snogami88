@@ -3,14 +3,15 @@ import re         #regualr expression
 import sys        #command line areguments
 import subprocess #executing program
 
+
 if(len(sys.argv) is not 3):
     print("Correct Syntax: wordCount.py <input_file.txt> <output_file.txt>")
     exit()
 
 input_file_name = sys.argv[1]
 output_file_name = sys.argv[2]
-word_list = []
-count = []
+word_list = {}
+count = {}
 
 #Check if input file exists
 if not os.path.exists(input_file_name):
@@ -20,11 +21,11 @@ if not os.path.exists(input_file_name):
 #Check if output file exists
 if not os.path.exists(output_file_name):
     print("output text file %s does not exists!" % output_file_name)
-    exit
+    exit()
 
 #Read the file
 def read_file():    
-    with open (input_file_name, 'r') as inputF      #open and read the file then close
+    with open(input_file_name, 'r') as inputF:      #open and read the file then close
         word_list = inputF.read()                   #Read the complete file
         word_list = word_list.casefold()            #Do not compare the case tense
         word_list = word_list.split()               #Remove any next line spaces
@@ -35,10 +36,10 @@ def read_file():
 
 #Print output file, or overide existing file
 def create_file(final_list, num_list):
-    with open (output_file_name, 'w') as inputOut   #open file write and close file
+    with open(output_file_name, 'w') as inputOut:   #open file write and close file
         i = 0
         for e in final_list
-            inputOut.write("%s %d\n", (e, num_list[i])
+            inputOut.write("%s %d\n" % (e, num_list[i]))
             i = i + 1
 
 #Create array with count of each words
@@ -53,7 +54,7 @@ def get_count(words):
 
 
 word_list = read_file()
-count = organize(word_list)
+get_count(word_list)
 create_file(word_list, count)
-print("Information from %s has been seperated into a list posted in %s" (input_file_name, output_file_name)
+print("Information from %s has been seperated into a list posted in %s" % (input_file_name, output_file_name))
 
